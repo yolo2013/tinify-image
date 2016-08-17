@@ -16,13 +16,13 @@ You can get you API key from [https://tinypng.com/developers](https://tinypng.co
 
 By default, source folder will be ```source```, output folder will be ```target```. So you can just run ```tinyfy-image``` on this condition.
 
-    $tinyfy-image -s 'source image folder name' -t 'output image folder name'
+    $ tinyfy-image -s 'SourceImageFolder' -t 'TargetImageFolder'
 
 ###Get Count
 
 get info about how much images **the API key** already optimized this month.
 
-    $tinyfy-image count
+    $ tinyfy-image count
 
 
 > Note: you have 500 images per month to optimize for free, you have to pay https://tinypng.com to get more images optimized per 1 month.
