@@ -1,25 +1,25 @@
 {
-  "name": "tinyfy-image",
-  "version": "1.0.2",
+  "name": "tinify-image",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tinyfy-image"
+    "test": "tinify-image"
   },
   "bin": {
-    "tinyfy-image": "index.js"
+    "tinify-image": "index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yolo2013/tinyfy-image.git"
+    "url": "https://github.com/yolo2013/tinify-image.git"
   },
   "keywords": [
     "image",
-    "tinyfy",
+    "tinify",
     "tinypng"
   ],
   "bugs": {
-    "url": "https://github.com/yolo2013/tinyfy-image/issues"
+    "url": "https://github.com/yolo2013/tinify-image/issues"
   },
   "author": "华续",
   "license": "MIT",
