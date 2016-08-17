@@ -14,9 +14,9 @@ You can get your API key from [https://tinypng.com/developers](https://tinypng.c
 
 ### Compress Image
 
-By default, source folder will be **source**, output folder will be **target**. So you can just run ```tinyfy-image``` on this condition.
+By default, source folder will be **source**, output folder will be **output**. So you can just run ```tinyfy-image``` on this condition.
 
-    $ tinyfy-image -s 'SourceImageFolder' -t 'TargetImageFolder'
+    $ tinyfy-image -s 'SourceImageFolder' -o 'OutputImageFolder'
 
 ###Get Count
 
@@ -25,3 +25,11 @@ Get info about how much images **the API key** already optimized this month.
     $ tinyfy-image count
 
 > Note: you have 500 images per month to optimize for free, you have to pay https://tinypng.com to get more images optimized per 1 month.
+
+##Links
+https://tinypng.com/
+https://github.com/DarthMarcius/img-tinify
+
+##License
+  
+MIT

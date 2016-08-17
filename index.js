@@ -13,7 +13,7 @@ tinify.key = key
 
 // supported file types.
 const exts = ['.jpg', '.jpeg', '.png']
-const keyFile = path.resolve(__dirname + "/key.js")
+const keyFile = path.resolve(__dirname + '/key.js')
 
 const userArgs = process.argv.slice(2)
 
@@ -48,16 +48,21 @@ if (userArgs[0] === 'setKey') {
 program
     .version(version)
     .option('-s, --source', 'source folder')
-    .option('-t, --target', 'target folder')
+    .option('-o, --output', 'output folder')
 
 program.parse(process.argv)
 
 let source = program.source || './source'
-let target = program.target || './target'
+let output = program.output || './output'
 
-// if target folder not exists, create it.
-if (!fs.existsSync(target)) {
-    fs.mkdirSync(target)
+if (!fs.existsSync(source)) {
+    console.log('Source folder not exist, please check it agian.'.red)
+    process.exit(1)
+}
+
+// if output folder not exists, create it.
+if (!fs.existsSync(output)) {
+    fs.mkdirSync(output)
 }
 
 fs.readdir(source, (err, files) => {
@@ -71,35 +76,35 @@ fs.readdir(source, (err, files) => {
 
     Promise.all(tasks)
         .then(function () {
-            console.log('All done! Have a nice day.'.green)
+            console.log('All done. Good luck!'.green)
         })
 })
 
 function compress(name) {
     return new Promise((resolve, reject) => {
         let sourceFile = `${source}/${name}`
-        let targetFile = `${target}/${name}`
+        let outputFile = `${output}/${name}`
 
-        fs.stat(sourceFile, function (err, stats) {
+        fs.stat(sourceFile, (err, stats) => {
             let originSize = stats.size
-            console.log(`file ${sourceFile}, origin size: ${(originSize / 1024).toFixed(2)}kb.`)
+            console.log(`${sourceFile}: original size: ${(originSize / 1024).toFixed(2)}kb.`)
 
-            tinify.fromFile(sourceFile).toFile(targetFile, function () {
-                fs.stat(targetFile, function (err, stats) {
+            tinify.fromFile(sourceFile).toFile(outputFile, () => {
+                fs.stat(outputFile, (err, stats) => {
                     if (err) {
                         if (err instanceof tinify.AccountError) {
-                            console.log("Verify your API key and account limit.")
+                            console.log('Verify your API key and account limit.'.red)
                         } else if (err instanceof tinify.ClientError) {
-                            console.log("Check your source image and request options.")
+                            console.log('Check your source image and request options.'.red)
                         } else if (err instanceof tinify.ServerError) {
-                            console.log("Temporary issue with the Tinify API.")
+                            console.log('Temporary issue with the Tinify API.'.red)
                         } else if (err instanceof tinify.ConnectionError) {
-                            console.log("A network connection error occurred.")
+                            console.log('A network connection error occurred.'.red)
                         } else {
-                            console.log("The error message is: " + err.message)
+                            console.log(`The error message is: ${err.message}`.red)
                         }
                     } else {
-                        console.log(`file ${sourceFile}, now size: ${(stats.size / 1024).toFixed(2)}kb. Just saved you ${((stats.size / originSize) * 100).toFixed(2)}%`.yellow)
+                        console.log(`${sourceFile}: now size: ${(stats.size / 1024).toFixed(2)}kb. Just saved you ${((1 - stats.size / originSize) * 100).toFixed(2)}%`.yellow)
                         resolve()
                     }
                 })
