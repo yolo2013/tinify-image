@@ -8,9 +8,11 @@
     $ tinyfy-image setKey 'API key'
  
 to set API key. You can get you API key from [https://tinypng.com/developers](https://tinypng.com/developers).
+
     $tinyfy-image -s 'source image folder name' -t 'output image folder name'
     
 to compress images. By default, source folder will be ```source```, output folder will be ```target```. So you can just run ```tinyfy-image``` on this condition.
+
     $tinyfy-image count
     
 to get info about how much images **the API key** already optimized this month.
