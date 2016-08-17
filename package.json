@@ -4,10 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tinyfy-image"
   },
   "bin": {
     "tinyfy-image": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yolo2013/tinyfy-image.git"
+  },
+  "keywords": [
+    "image",
+    "tinyfy",
+    "tinypng"
+  ],
+  "bugs": {
+    "url": "https://github.com/yolo2013/tinyfy-image/issues"
   },
   "author": "华续",
   "license": "MIT",
