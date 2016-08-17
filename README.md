@@ -27,8 +27,9 @@ Get info about how much images **the API key** already optimized this month.
 > Note: you have 500 images per month to optimize for free, you have to pay https://tinypng.com to get more images optimized per 1 month.
 
 ##Links
-https://tinypng.com/
-https://github.com/DarthMarcius/img-tinify
+
+[https://tinypng.com/](https://tinypng.com/)
+[https://github.com/DarthMarcius/img-tinify](https://github.com/DarthMarcius/img-tinify)
 
 ##License
   
