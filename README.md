@@ -1,3 +1,6 @@
+
+<a href="https://www.npmjs.com/package/tinify-image"> <img src="https://img.shields.io/badge/npm-v1.0.0-brightgreen.svg" alt="Version"></a>
+
 # tinify-image
 > It's npm tool based on https://tinypng.com API which allows you easier to compress you images.
 
