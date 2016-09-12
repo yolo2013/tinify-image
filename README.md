@@ -32,6 +32,7 @@ Get info about how much images **the API key** already optimized this month.
 ##Links
 
 [https://tinypng.com/](https://tinypng.com/)
+
 [https://github.com/DarthMarcius/img-tinify](https://github.com/DarthMarcius/img-tinify)
 
 ##License
